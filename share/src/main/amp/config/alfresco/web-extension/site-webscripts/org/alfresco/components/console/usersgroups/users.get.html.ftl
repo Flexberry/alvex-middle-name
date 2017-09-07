@@ -16,6 +16,7 @@
 </@>
 
 <@markup id="html">
+                    
     <@uniqueIdDiv>
     <!--[if IE]>
     <iframe id="yui-history-iframe" src="${url.context}/res/yui/history/assets/blank.html"></iframe>
@@ -244,6 +245,23 @@
                         <input class="crud-input" id="${el}-create-lastname" type="text" maxlength="256" />
                     </div>
                     <div class="field-row">
+                        <span class="crud-label">${msg("label.birthdate")}:</span>
+                    </div>
+                    <div class="field-row">
+                        <input class="crud-input" id="${el}-create-birthdate" type="text" maxlength="256" readonly/>
+                    </div>
+                    <div id="cal0Container" class="field-row"></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    
+                    
+                    <div class="field-row">
                         <span class="crud-label">${msg("label.email")}:&nbsp;*</span>
                     </div>
                     <div class="field-row">
@@ -344,6 +362,77 @@
                     <div class="field-row">
                         <input class="crud-input" id="${el}-update-lastname" type="text" maxlength="256" />
                     </div>
+                    <div class="field-row">
+                        <span class="crud-label">${msg("label.birthdate")}:</span>
+                    </div>
+                    
+                    <div class="field-row">
+                    
+                      <input class="crud-input" id="${el}-update-birthdate" name="startdate" value="" type="text" maxlength="256" readonly/>
+                    </div>
+                    <div id="cal1Container" class="field-row"></div>
+
+     <script type="text/javascript">//<![CDATA[
+		var calendarConfig =
+		{
+			MONTHS_LONG: [
+			    "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+			    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+			   ],
+			WEEKDAYS_SHORT : ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"] ,
+			START_WEEKDAY: 1,
+			navigator:
+			 {
+				 strings:
+				  {
+					  month: "Месяц",
+					  year: "Год",
+					  submit: "Выбрать",
+					  cancel: "Отмена",
+					  invalidYear: "Неверный год"
+				  }
+			 }
+		}
+		init = function() {
+			function selectHandler0(type,args,obj) {
+				document.getElementById("${el}-create-birthdate").value = getDateStr(type,args,obj);
+			};
+			var cal0 = new YAHOO.widget.Calendar("cal0","cal0Container",calendarConfig);
+			cal0.selectEvent.subscribe(selectHandler0, cal0, true);
+			cal0.render();
+
+			function selectHandler1(type,args,obj) {
+				document.getElementById("${el}-update-birthdate").value = getDateStr(type,args,obj);
+			};
+			
+			function getDateStr(type,args,obj){
+				//var selected = args[0];
+				//var selDate = this.toDate(selected[0]);
+	            var datedata = args[0][0]; 
+	            var year = datedata[0]; 
+	            var month = datedata[1]; 
+	            var day = datedata[2];
+	            return  day+'/'+month+'/'+year;
+			}
+	
+			var cal1 = new YAHOO.widget.Calendar("cal1","cal1Container",calendarConfig);
+			cal1.selectEvent.subscribe(selectHandler1, cal1, true);
+			cal1.render();
+		}
+	
+		YAHOO.util.Event.onDOMReady(init);
+      
+     //]]></script>
+                    
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    <div class="field-row"><span class="crud-label">&nbsp;</span></div>
+                    
                     <div class="field-row">
                         <span class="crud-label">${msg("label.email")}:&nbsp;*</span>
                     </div>

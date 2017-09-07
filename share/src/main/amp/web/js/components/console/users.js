@@ -430,7 +430,7 @@
                   // Create view userlink
                   var firstName = oRecord.getData("firstName"),
                       lastName = oRecord.getData("lastName"),
-                      middleName = oRecord.getData("middleName"),
+                      middleName = oRecord.getData("middleName"),birthDate = oRecord.getData("birthDate"),
                       name = (lastName ? lastName + ' ' : "") + firstName + ' ' + (middleName ? middleName : ""),
                       viewUserLink = document.createElement("a");
                   viewUserLink.innerHTML = $html(name);
@@ -695,7 +695,7 @@
                // About section fields
                var firstName = person.firstName,
                   lastName = person.lastName,
-                   middleName = person.middleName,
+                   middleName = person.middleName,birthDate = person.birthDate,
                   fullName = (lastName ? lastName + ' ' : "") + firstName + ' ' + (middleName ? middleName : "");
 
                fnSetter("-view-title", fullName);
@@ -984,6 +984,7 @@
             // clear data fields
             fnClearEl("-create-firstname");
             fnClearEl("-create-middlename")
+            fnClearEl("-create-birthdate")
             fnClearEl("-create-lastname");
             fnClearEl("-create-email");
             fnClearEl("-create-username");
@@ -1294,12 +1295,14 @@
                // About section fields
                var firstName = person.firstName,
                    lastName = person.lastName,
-                   middleName = person.middleName,
+                   middleName = person.middleName,birthDate = person.birthDate,
                    fullName = (lastName ? lastName + ' ' : "") + firstName + ' ' + (middleName ? middleName : "");
                fnSetter("-update-firstname", firstName);
                fnDisabler("-update-firstname", "firstName", person.immutability);
                fnSetter("-update-middlename", middleName);
                fnDisabler("-update-middlename", "middleName", person.immutability);
+               fnSetter("-update-birthdate", birthDate);
+               fnDisabler("-update-birthdate", "birthDate", person.immutability);
                fnSetter("-update-lastname", lastName);
                fnDisabler("-update-lastname", "lastName", person.immutability);
                fnSetter("-update-email", person.email);
@@ -2297,6 +2300,7 @@
             password: password,
             firstName: fnGetter("-create-firstname"),
             middleName: fnGetter("-create-middlename"),
+            birthDate: fnGetter("-create-birthdate"),
             lastName: fnGetter("-create-lastname"),
             email: fnGetter("-create-email"),
             disableAccount: Dom.get(me.id + "-create-disableaccount").checked,
@@ -2475,6 +2479,7 @@
          {
             firstName: fnGetter("-update-firstname"),
             middleName: fnGetter("-update-middlename"),
+            birthDate: fnGetter("-update-birthdate"),
             lastName: fnGetter("-update-lastname"),
             email: fnGetter("-update-email"),
             disableAccount: Dom.get(me.id + "-update-disableaccount").checked,

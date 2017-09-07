@@ -144,6 +144,7 @@ var Alvex = Alvex ? Alvex : {};
          Dom.get(prefix + "lastName").value = p.lastName;
          Dom.get(prefix + "firstName").value = p.firstName;
          Dom.get(prefix + "middleName").value = p.middleName;
+         Dom.get(prefix + "birthDate").value = p.birthDate;
          Dom.get(prefix + "jobtitle").value = p.jobtitle;
          Dom.get(prefix + "location").value = p.location;
          Dom.get(prefix + "bio").value = p.bio;

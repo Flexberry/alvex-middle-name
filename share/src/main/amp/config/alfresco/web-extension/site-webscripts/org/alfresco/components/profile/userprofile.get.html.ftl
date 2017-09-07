@@ -24,6 +24,7 @@ var userProfile = new Alvex.UserProfile("${args.htmlid}").setOptions(
                 lastName: "<#if profile.lastName??>${profile.lastName?js_string}</#if>",
                 firstName: "<#if profile.firstName??>${profile.firstName?js_string}</#if>",
                 middleName: "<#if profile.middleName??>${profile.middleName?js_string}</#if>",
+                birthDate: "<#if profile.birthDate??>${profile.birthDate?js_string}</#if>",
                 jobtitle: "<#if profile.jobTitle??>${profile.jobTitle?js_string}</#if>",
                 location: "<#if profile.location??>${profile.location?js_string}</#if>",
                 bio: "<#if profile.biography??>${profile.biography?js_string}</#if>",
@@ -200,6 +201,10 @@ ${messages}
                 <div class="row">
                     <span class="label"><label for="${el}-input-middleName">${msg("label.middlename")}:</label></span>
                     <span><input type="text" maxlength="256" size="30" id="${el}-input-middleName" value="" <@immutablefield field="middleName" /> /></span>
+                </div>
+                <div class="row">
+                    <span class="label"><label for="${el}-input-birthDate">${msg("label.birthdate")}:</label></span>
+                    <span><input type="text" maxlength="256" size="30" id="${el}-input-birthDate" value="" <@immutablefield field="birthDate" /> /></span>
                 </div>
             <div class="drow">
                <div class="reqcolumn">&nbsp;</div>

@@ -57,6 +57,10 @@ function main()
     {
         person.properties["middleName"] = json.get("middleName");
     }
+    if (json.has("birthDate"))
+    {
+        person.properties["birthDate"] = json.get("birthDate");
+    }
     person.save();
 
     // set quota if any - note that only Admin can set this and will be ignored otherwise

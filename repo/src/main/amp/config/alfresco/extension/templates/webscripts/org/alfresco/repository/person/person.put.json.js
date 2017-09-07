@@ -22,6 +22,10 @@ function main()
     {
         person.properties["middleName"] = json.get("middleName");
     }
+    if (!json.isNull("birthDate"))
+    {
+        person.properties["birthDate"] = json.get("birthDate");
+    }
     if (!json.isNull("email"))
     {
         person.properties["email"] = json.get("email");

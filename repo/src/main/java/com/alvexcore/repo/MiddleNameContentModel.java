@@ -9,4 +9,5 @@ import org.alfresco.service.namespace.QName;
 
 public class MiddleNameContentModel {
     public static final QName PROP_MIDDLENAME = QName.createQName(NamespaceService.CONTENT_MODEL_1_0_URI, "middleName");
+    public static final QName PROP_BIRTHDATE = QName.createQName(NamespaceService.CONTENT_MODEL_1_0_URI, "birthDate");
 }

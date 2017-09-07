@@ -26,12 +26,15 @@ public class MNUserFactory extends SlingshotUserFactory {
 
     public static final String CM_MIDDLENAME = "{http://www.alfresco.org/model/content/1.0}middleName";
     public static String PROP_CM_MIDDLENAME = "middleName";
+    public static final String CM_BIRTHDATE = "{http://www.alfresco.org/model/content/1.0}birthDate";
+    public static String PROP_CM_BIRTHDATE = "birthDate";
 
     @Override
     protected AlfrescoUser constructUser(JSONObject properties, Map<String, Boolean> capabilities,
                                          Map<String, Boolean> immutability) throws JSONException {
         AlfrescoUser user = super.constructUser(properties, capabilities, immutability);
         user.setProperty(PROP_CM_MIDDLENAME, properties.has(CM_MIDDLENAME) ? properties.getString(CM_MIDDLENAME) : null);
+        user.setProperty(PROP_CM_BIRTHDATE, properties.has(CM_BIRTHDATE) ? properties.getString(CM_BIRTHDATE) : null);
         return user;
     }
 
@@ -56,6 +59,7 @@ public class MNUserFactory extends SlingshotUserFactory {
             writer.writeValue(CM_FIRSTNAME, user.getFirstName());
             writer.writeValue(CM_LASTNAME, user.getLastName());
             writer.writeValue(CM_MIDDLENAME, user.getStringProperty(PROP_CM_MIDDLENAME));
+            writer.writeValue(CM_BIRTHDATE, user.getStringProperty(PROP_CM_BIRTHDATE));
             writer.writeValue(CM_JOBTITLE, user.getJobTitle());
             writer.writeValue(CM_ORGANIZATION, user.getOrganization());
             writer.writeValue(CM_LOCATION, user.getLocation());

@@ -20,6 +20,7 @@ public class MNamePersonServiceImpl extends PersonServiceImpl {
         props.add(ContentModel.PROP_HOMEFOLDER);
         props.add(ContentModel.PROP_FIRSTNAME);
         props.add(MiddleNameContentModel.PROP_MIDDLENAME);
+        props.add(MiddleNameContentModel.PROP_BIRTHDATE);
         props.add(ContentModel.PROP_LASTNAME);
         props.add(ContentModel.PROP_EMAIL);
         props.add(ContentModel.PROP_ORGID);

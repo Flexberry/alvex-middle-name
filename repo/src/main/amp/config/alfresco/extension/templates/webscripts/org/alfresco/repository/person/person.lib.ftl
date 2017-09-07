@@ -10,6 +10,7 @@
     "firstName": <#if p.firstName??>"${p.firstName}"<#else>null</#if>,
     "lastName": <#if p.lastName??>"${p.lastName}"<#else>null</#if>,
     "middleName": <#if p.middleName??>"${p.middleName}"<#else>null</#if>,
+    "birthDate": <#if p.birthDate??>"${p.birthDate}"<#else>null</#if>,
     "jobtitle": <#if p.jobtitle??>"${p.jobtitle}"<#else>null</#if>,
     "organization": <#if p.organization??>"${p.organization}"<#else>null</#if>,
     "organizationId": <#if p.organizationId??>"${p.organizationId}"<#else>null</#if>,
@@ -87,6 +88,7 @@
     "firstName": "${person.properties.firstName!""}",
     "lastName": "${person.properties.lastName!""}",
     "middleName": "${person.properties.middleName!""}",
+    "birthDate": "${person.properties.birthDate!""}",
     "jobtitle": "${person.properties.jobtitle!""}",
     "location": "${person.properties.location!""}"
     }

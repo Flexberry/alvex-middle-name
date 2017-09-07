@@ -9,6 +9,7 @@
    <dt>firstName</dt> <dd>mandatory - the given Name</dd>
    <dt>lastName</dt> <dd>mandatory - the family name</dd>
    <dt>middleName</dt> <dd>optional - the middle name</dd>
+   <dt>birthDate</dt> <dd>optional - the birth date</dd>
    <dt>email</dt> <dd>mandatory - the email address  </dd>
    <dt>password</dt> <dd>optional - the new user's password.  If not specified then a value of "password" is used which should be changed as soon as possible.</dd>
    <dt>disableAccount</dt> <dd>optional - If present and set to "true" the user is created but their account will be disabled.</dd>
